@@ -7,13 +7,15 @@ from .models import Feature
 # Create your views here.
 def index(request):
     features = Feature.objects.all()
-    return render(request, 'index.html', {'features': features})
+    context = {
+        'features': features
+    }
+    return render(request, 'index.html', context)
 
-def landing(request):
-    return render(request, 'landing.html')
+def feature_retrieve(request, pk):
+    feature = Feature.objects.get(id=pk)
+    context = {
+        'feature': feature
+    }
+    return render(request, 'fast.html', context)
 
-def generic(request):
-    return render(request, 'generic.html')
-
-def elements(request):
-    return render(request, 'elements.html')

@@ -1,9 +1,8 @@
 from django.urls import path
 from . import views
+from .views import feature_retrieve
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('landing', views.landing, name='landing'),
-    path('generic', views.generic, name='generic'),
-    path('elements', views.elements, name='elements'),
+    path('landing/<pk>', feature_retrieve)
 ]
