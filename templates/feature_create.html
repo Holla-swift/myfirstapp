@@ -1,0 +1,12 @@
+<form method = "POST">
+
+{% comment %} {{% csrf_token %}} {% endcomment %}
+
+{% csrf_token %} 
+
+{{form.as_p}}
+
+
+<input type="submit" value="Submit">
+
+</form>
